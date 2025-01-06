@@ -3361,3 +3361,36 @@ input, select, textarea {
 	.row section p {
 		margin-top: 10px;
 	}
+
+	/* Reset Row Layout */
+	.row {
+	    display: flex;
+	    flex-wrap: wrap;
+	    gap: 20px; /* Adds space between columns */
+	    margin: 0;
+	    padding: 0;
+	}
+	
+	/* Equal Column Width */
+	.col {
+	    flex: 1 1 48%; /* Flex-grow, flex-shrink, flex-basis: Adjusts to 48% width */
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    text-align: center;
+	    max-width: 100%; /* Prevents overflow */
+	}
+	
+	.col img,
+	.col iframe,
+	.col video {
+	    width: 100%; /* Scales media to column width */
+	    height: auto; /* Maintains aspect ratio */
+	}
+	
+	/* Media Queries for Smaller Screens */
+	@media (max-width: 768px) {
+	    .col {
+	        flex: 1 1 100%; /* Full width for small screens */
+	    }
+	}
